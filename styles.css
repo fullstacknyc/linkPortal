@@ -1,0 +1,115 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full-page layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+    overflow: hidden; /* Prevent default scrolling */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Fixed Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
+    text-align: center;
+    padding: 10px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Scrollable container */
+#projects-container {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari, Edge */
+#projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Project Cards */
+.project-card {
+    width: 100%;
+    height: 100vh; /* Full-screen project cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: white;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect */
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+/* Project Titles */
+.project-card h3 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Project Descriptions */
+.project-card p {
+    font-size: 1.2rem;
+    color: #555;
+    width: 80%;
+    text-align: center;
+}
+
+/* Project Links */
+.project-card a {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.project-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    background: white;
+    position: fixed;
+    bottom: 0;
+    font-size: 0.9rem;
+}
