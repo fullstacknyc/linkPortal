@@ -5,16 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myLinkPortal</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="flower-icon-png.png">
+
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Camilo Gomez Valencia's personal link portal. Explore projects, social links, and more.">
+    <meta property="og:title" content="myLinkPortal">
+    <meta property="og:description" content="Camilo Gomez Valencia's personal link portal. Explore projects, social links, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="flower-icon-png.png">
+    <meta name="twitter:card" content="summary">
 </head>
 <body>
     <header>
         <h1>myLinkPortal</h1>
+        <div id="profile-section" aria-label="Profile">
+            <img src="/avatar.png" alt="pfp" id="avatar" />
+            <p id="bio">Software Engineer. Building, learning, sharing.</p>
+        </div>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
 
-    <main id="projects-container">
+    <div id="filter-container" aria-label="Filter links">
+        <!-- Filter buttons will be added here dynamically -->
+    </div>
+
+    <section id="projects-container" aria-label="Project Links">
         <!-- Project cards will be added here dynamically -->
-    </main>
+    </section>
 
     <footer>
         <p>&copy; 2025</p>
