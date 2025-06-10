@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Project data with categories and optional icon
     const projects = [
         { name: "AudioCloud", description: "A music sharing platform for music engineers and artists alike.", link: "https://s3-audio-uploader.vercel.app", category: "Project" },
-        { name: "myLinkedIn", description: "Connect with me professionally.", link: "https://www.linkedin.com/in/camilogomezvalencia", category: "Social" },
-        { name: "myGitHub", description: "Explore my projects and contributions.", link: "https://www.github.com/fullstacknyc", category: "Social" }
     ];
 
     // Get unique categories for filtering
