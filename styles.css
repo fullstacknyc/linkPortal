@@ -36,6 +36,27 @@ h1 {
     font-weight: bold;
 }
 
+/* Header Links */
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-links a {
+    color: #007bff;
+    background: #f4f4f4;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
 /* Scrollable container */
 #projects-container {
     width: 100%;
@@ -102,8 +123,32 @@ h1 {
     transition: background-color 0.3s;
 }
 
+/* Prevent blue/purple/active color changes for links and keep text readable */
+.project-card a:visited,
+.project-card a:active,
+.project-card a:focus {
+    color: white;
+    background-color: #007bff;
+    outline: none;
+}
+
 .project-card a:hover {
     background-color: #0056b3;
+    color: white;
+}
+
+/* Dark mode: ensure link color is readable and consistent */
+body.dark-mode .project-card a,
+body.dark-mode .project-card a:visited,
+body.dark-mode .project-card a:active,
+body.dark-mode .project-card a:focus {
+    color: #e0e0e0;
+    background-color: #0056b3;
+}
+
+body.dark-mode .project-card a:hover {
+    background-color: #007bff;
+    color: #e0e0e0;
 }
 
 /* Profile Section */
@@ -234,6 +279,49 @@ footer {
     font-size: 0.9rem;
 }
 
-a {
+/* Add styles for header links */
+.header-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-links a {
+    color: #007bff;
+    background: #f4f4f4;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1rem;
     text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.header-links a:visited,
+.header-links a:active,
+.header-links a:focus {
+    color: #007bff;
+    background: #f4f4f4;
+    outline: none;
+}
+
+.header-links a:hover {
+    background: #007bff;
+    color: #fff;
+}
+
+body.dark-mode .header-links a,
+body.dark-mode .header-links a:visited,
+body.dark-mode .header-links a:active,
+body.dark-mode .header-links a:focus {
+    color: #e0e0e0;
+    background: #23272a;
+}
+
+body.dark-mode .header-links a:hover {
+    background: #007bff;
+    color: #fff;
 }
