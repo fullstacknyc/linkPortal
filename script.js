@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Project data with categories and optional icon
     const projects = [
         { name: "AudioCloud", description: "A music sharing platform for music engineers and artists alike.", link: "https://s3-audio-uploader.vercel.app", category: "Project" },
+        { name: "ApocalypticZ", description: "A top down zombie rpg survival.", link: "https://apocalypticz.vercel.app", category: "Project" },
+        { name: "DevGuides", description: "A library for software engineers who wish to read about systems engineering.", link: "https://vscript.vercel.app", category: "Project" }
     ];
 
     // Get unique categories for filtering
