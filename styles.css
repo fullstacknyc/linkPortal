@@ -19,17 +19,26 @@ body {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 20vh;
+    min-height: 120px;
+    max-height: 200px;
     background: white;
-    text-align: center;
-    padding: 10px;
     z-index: 100;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 32px;
+    gap: 32px;
 }
 
 h1 {
     font-size: 2rem;
     color: #333;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: bold;
@@ -38,13 +47,46 @@ body.dark-mode header h1 {
     color: #f4f4f4;
 }
 
+/* Avatar */
+#avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    flex-shrink: 0;
+}
+
+/* Profile Section */
+#profile-section {
+    margin: 0;
+    padding: 0;
+}
+#bio {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+body.dark-mode #bio {
+    color: #f4f4f4;
+}
+
+/* Header Content */
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
 /* Header Links */
 .header-links {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    gap: 1rem;
+    margin: 0.2rem 0;
 }
 
 .header-links a {
@@ -57,6 +99,16 @@ body.dark-mode header h1 {
     text-decoration: none;
     transition: background 0.2s, color 0.2s;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Dark Mode Toggle */
+#dark-mode-toggle {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-start;
 }
 
 /* Scrollable container */
@@ -153,42 +205,6 @@ body.dark-mode .project-card a:hover {
     color: #e0e0e0;
 }
 
-/* Profile Section */
-#profile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 8px;
-    border: 2px solid #007bff;
-}
-#bio {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 0;
-}
-body.dark-mode #bio {
-    color: #f4f4f4;
-}
-
-/* Dark Mode Toggle */
-#dark-mode-toggle {
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
 /* Filter Container */
 #filter-container {
     display: flex;
@@ -219,6 +235,35 @@ body.dark-mode #filter-container button.active,
 body.dark-mode #filter-container button:hover {
     background: #007bff;
     color: #fff;
+}
+
+/* Bio careers layout: vertical on all screens, centered on small screens */
+.bio-careers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+.bio-careers span {
+    white-space: nowrap;
+    background: rgba(0,0,0,0.03);
+    border-radius: 6px;
+    padding: 2px 10px;
+    font-weight: 500;
+}
+body.dark-mode .bio-careers {
+    color: #f4f4f4;
+}
+body.dark-mode .bio-careers span {
+    background: rgba(255,255,255,0.07);
+}
+@media (max-width: 600px) {
+    .bio-careers {
+        align-items: center;
+    }
 }
 
 /* Fade-in Animation */
@@ -271,23 +316,33 @@ body.dark-mode #avatar {
 }
 
 /* Responsive Design */
+@media (max-width: 900px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        padding: 16px 8px;
+        gap: 16px;
+    }
+    .header-content {
+        align-items: center;
+        text-align: center;
+    }
+    #dark-mode-toggle {
+        align-self: center;
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.3rem;
-    }
     #avatar {
-        width: 60px;
-        height: 60px;
+        width: 48px;
+        height: 48px;
     }
-    .project-card h3 {
-        font-size: 1.2rem;
-    }
-    .project-card p {
-        font-size: 1rem;
-        width: 95%;
-    }
-    #filter-container {
-        margin-top: 70px;
+    .header-content h1 {
+        font-size: 1.3rem;
     }
 }
 
